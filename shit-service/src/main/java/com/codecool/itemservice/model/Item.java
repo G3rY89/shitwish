@@ -29,6 +29,9 @@ public class Item {
         this.sellerId = sellerId;
     }
 
+    public Item() {
+    }
+
     public long getId() {
         return id;
     }

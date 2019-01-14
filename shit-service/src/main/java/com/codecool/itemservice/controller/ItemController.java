@@ -42,13 +42,14 @@ public class ItemController {
     }
 
     @PutMapping("/items/{id}")
-    public ResponseEntity<Object> updateItem(@RequestBody Item item, @PathVariable long id){
+    public ResponseEntity<Object> updateItem(@PathVariable long id){
         Optional<Item> itemOptional = this.itemService.findById(id);
 
         if (!itemOptional.isPresent())
             return ResponseEntity.notFound().build();
 
-        item.setId(id);
+        Item item = itemOptional.get();
+        item.setAvailable(false);
 
         this.itemService.addItem(item);
         return ResponseEntity.noContent().build();

@@ -26,7 +26,24 @@ public class Cart {
     public Cart() {
     }
 
-    public void addItemToCart(Integer id){
-        itemsInCart.add(id);
+    public void addItemToCart(Integer itemId){
+        itemsInCart.add(itemId);
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void removeItem(Integer itemId){
+        itemsInCart.remove(itemId);
+    }
+
+    public List<Integer> getItemsInCart() {
+        return itemsInCart;
+    }
+
+    public void changeStatus(){
+        this.isCompleted = true;
+    }
+
 }

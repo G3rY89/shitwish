@@ -34,9 +34,8 @@ public class ItemService {
     }
 
 
-    public void createItem(String name, String image, int price, long sellerId){
-        Date date = new Date();
-        addItem(new Item(name, price, true, image, date, sellerId));
+    public void createItem(String name, String description, String image, int price, long sellerId){
+        addItem(new Item(name, description, price, image, sellerId));
     }
 
     public void saveImageFile(Long itemId, String image) {

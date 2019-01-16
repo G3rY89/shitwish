@@ -19,15 +19,15 @@ public class Initialize {
 
     @PostConstruct
     public void initDatabase() throws Exception {
-        itemService.createItem("Stick", "https://vignette.wikia.nocookie.net/tokipona/images/a/aa/Stick.png/revision/latest?cb=20171120043817",
+        itemService.createItem("Stick", "A stick", "https://vignette.wikia.nocookie.net/tokipona/images/a/aa/Stick.png/revision/latest?cb=20171120043817",
                 100, 1);
-        itemService.createItem("Shit", "https://http2.mlstatic.com/almofada-emoticon-emoji-cocozinho-pou-grande-40x40-whatsapp-D_NQ_NP_635411-MLB20557478677_012016-F.jpg",
+        itemService.createItem("Shit","Piece of shit", "https://http2.mlstatic.com/almofada-emoticon-emoji-cocozinho-pou-grande-40x40-whatsapp-D_NQ_NP_635411-MLB20557478677_012016-F.jpg",
                 1500, 2);
-        itemService.createItem("Trash", "https://toppng.com/public/uploads/preview/trash-can-11530995314kgh8pawz8u.png",
+        itemService.createItem("Trash", "Everywhere", "https://toppng.com/public/uploads/preview/trash-can-11530995314kgh8pawz8u.png",
                 1300, 1);
-        itemService.createItem("Wonder Woman", "https://www.clipartmax.com/png/middle/195-1951557_wonder-woman-png-edit-justice-league-by-bp251-wonder-woman-gal-gadot.png",
+        itemService.createItem("Wonder Woman","Sexy bitch", "https://www.clipartmax.com/png/middle/195-1951557_wonder-woman-png-edit-justice-league-by-bp251-wonder-woman-gal-gadot.png",
                 0, 1);
-        itemService.createItem("Little boy", "https://clipart.info/images/ccovers/1496252513Justin-Bieber-PNG-Picture-2017.png",
+        itemService.createItem("Little boy", "Yeea boy","https://clipart.info/images/ccovers/1496252513Justin-Bieber-PNG-Picture-2017.png",
                 99, 2);
     }
 }

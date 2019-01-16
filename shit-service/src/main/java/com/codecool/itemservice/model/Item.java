@@ -13,22 +13,21 @@ public class Item {
     private long id;
 
     private String name;
+    private String description;
     private int price;
-    private boolean available;
+    private boolean available = true;
 
     private String img;
 
     @Temporal(TemporalType.DATE)
-    private Date uploadDate;
-
+    private Date uploadDate = new Date();
     private long sellerId;
 
-    public Item(String name, int price, boolean available, String img, Date uploadDate, long sellerId) {
+    public Item(String name, String description, int price, String img, long sellerId) {
         this.name = name;
+        this.description = description;
         this.price = price;
-        this.available = available;
         this.img = img;
-        this.uploadDate = uploadDate;
         this.sellerId = sellerId;
     }
 
@@ -89,5 +88,13 @@ public class Item {
 
     public void setSellerId(long sellerId) {
         this.sellerId = sellerId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

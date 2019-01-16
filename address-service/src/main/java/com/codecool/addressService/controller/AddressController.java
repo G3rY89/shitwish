@@ -22,7 +22,7 @@ public class AddressController {
         return addressService.getAllAddresses();
     }
 
-    @GetMapping("/address/{id}")
+    @GetMapping("/address/{userId}")
     public Address retrieveAddressByUserId(@PathVariable long userId) {
         Address address = this.addressService.findAddressByUserId(userId);
 

@@ -5,6 +5,8 @@ import com.codecool.itemservice.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.nio.charset.Charset;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,4 +34,14 @@ public class ItemService {
     }
 
 
+    public void createItem(String name, String image, int price, long sellerId){
+        Date date = new Date();
+        addItem(new Item(name, price, true, image, date, sellerId));
+    }
+
+    public void saveImageFile(Long itemId, String image) {
+        Item item = itemRepository.findById(itemId).get();
+        item.setImg(image);
+        itemRepository.save(item);
+    }
 }

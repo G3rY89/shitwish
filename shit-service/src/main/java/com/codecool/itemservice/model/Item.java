@@ -1,5 +1,7 @@
 package com.codecool.itemservice.model;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -13,6 +15,7 @@ public class Item {
     private String name;
     private int price;
     private boolean available;
+
     private String img;
 
     @Temporal(TemporalType.DATE)

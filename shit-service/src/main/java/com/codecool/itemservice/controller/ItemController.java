@@ -27,7 +27,7 @@ public class ItemController {
     }
 
     @GetMapping("/items/{id}")
-    public Item retrieveStudent(@PathVariable long id) {
+    public Item showById(@PathVariable long id) {
         Optional<Item> item = this.itemService.findById(id);
 
         if (!item.isPresent())
@@ -37,12 +37,12 @@ public class ItemController {
     }
 
     @PostMapping("/items")
-    public void createItem(@RequestBody Item item){
+    public void addNewItem(@RequestBody Item item){
         this.itemService.addItem(item);
     }
 
     @PutMapping("/items/{id}")
-    public ResponseEntity<Object> updateItem(@PathVariable long id){
+    public ResponseEntity<Object> updateItemAvailability(@PathVariable long id){
         Optional<Item> itemOptional = this.itemService.findById(id);
 
         if (!itemOptional.isPresent())
@@ -54,5 +54,4 @@ public class ItemController {
         this.itemService.addItem(item);
         return ResponseEntity.noContent().build();
     }
-
 }

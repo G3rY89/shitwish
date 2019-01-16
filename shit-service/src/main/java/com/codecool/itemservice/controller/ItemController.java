@@ -21,11 +21,13 @@ public class ItemController {
         this.itemService = itemService;
     }
 
+    @CrossOrigin
     @GetMapping("/items")
     public List<Item> allAvailableItems(){
         return itemService.getAllAvailableItems();
     }
 
+    @CrossOrigin
     @GetMapping("/items/{id}")
     public Item showById(@PathVariable long id) {
         Optional<Item> item = this.itemService.findById(id);
@@ -36,11 +38,13 @@ public class ItemController {
         return item.get();
     }
 
+    @CrossOrigin
     @PostMapping("/items")
     public void addNewItem(@RequestBody Item item){
         this.itemService.addItem(item);
     }
 
+    @CrossOrigin
     @PutMapping("/items/{id}")
     public ResponseEntity<Object> updateItemAvailability(@PathVariable long id){
         Optional<Item> itemOptional = this.itemService.findById(id);

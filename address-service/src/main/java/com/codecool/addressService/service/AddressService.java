@@ -28,4 +28,8 @@ public class AddressService {
     public List<Address> getAllAddresses(){
         return this.addressRepository.findAll();
     }
+
+    public void deleteAddressBasedOnUserId(long userId){
+        this.addressRepository.deleteAddressByUserId(userId);
+    }
 }

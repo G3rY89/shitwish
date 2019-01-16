@@ -1,9 +1,6 @@
 package com.codecool.addressService.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Address {
@@ -20,6 +17,7 @@ public class Address {
     private String firstName;
     private String lastName;
 
+    @Column(unique = true)
     private long userId;
 
     public Address(String street, String houseNumber, String city, int zipCode, String country, String firstName, String lastName, long userId) {

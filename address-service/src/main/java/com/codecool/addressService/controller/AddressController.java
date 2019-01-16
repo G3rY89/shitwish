@@ -34,7 +34,7 @@ public class AddressController {
         this.addressService.addAddress(address);
     }
 
-    @PutMapping("/address/{id}")
+    @PutMapping("/address/{userId}")
     public void updateAddressByUserId(@PathVariable long userId, @RequestBody Address newAddress){
         Address oldAddress = this.addressService.findAddressByUserId(userId);
         oldAddress.setCity(newAddress.getCity());
@@ -47,5 +47,4 @@ public class AddressController {
 
         this.addressService.addAddress(oldAddress);
     }
-
 }

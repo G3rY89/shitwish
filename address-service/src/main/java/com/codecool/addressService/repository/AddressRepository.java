@@ -6,4 +6,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface AddressRepository extends JpaRepository<Address, Long> {
     public Address findByUserId(@Param("userId") long id);
+
+    public void deleteAddressByUserId(@Param("userId") long id);
 }
